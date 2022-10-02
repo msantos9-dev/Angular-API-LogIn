@@ -23,12 +23,11 @@ export class RegistrationComponent implements OnInit {
     });
   }
 
-
-
   submit() {
     this.authService.register(this.registrationForm);
   }
   isLoading(){
     return this.authService.isLoading;
   }
+
 }

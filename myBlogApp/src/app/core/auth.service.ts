@@ -1,7 +1,8 @@
 import { Injectable } from '@angular/core';
 import { FormGroup } from '@angular/forms';
 import { Router } from '@angular/router';
-import { createUserWithEmailAndPassword, getAuth, signInWithEmailAndPassword, signOut } from 'firebase/auth';
+import { createUserWithEmailAndPassword, FacebookAuthProvider, getAuth, GoogleAuthProvider, signInWithEmailAndPassword, signInWithPopup, signOut } from 'firebase/auth';
+
 
 @Injectable({
   providedIn: 'root'
@@ -24,6 +25,8 @@ export class AuthService {
           // Signed in 
           this.isAuthenticated = true;
           this.router.navigate(['blog/admin']);
+          localStorage.setItem('loginEmail', loginForm.get('email')?.value);
+          localStorage.setItem('loginPassword', loginForm.get('password')?.value);
           // ...
         })
         .catch((error) => {
@@ -69,10 +72,67 @@ signOut(auth).then(() => {
   // Sign-out successful.
   this.router.navigate(['']);
   this.isAuthenticated = false;
+  this.isLoading = false;
 }).catch((error) => {
   // An error happened.
 });
 
   }
   constructor(private router:Router) { }
+
+  googleRegister(){
+    if(this.isLoading) return;
+    this.isLoading = true;
+    const auth = getAuth();
+signInWithPopup(auth, new GoogleAuthProvider())
+  .then((result) => {
+    this.isAuthenticated = true;
+    this.router.navigate(['blog/admin']);
+    // This gives you a Google Access Token. You can use it to access the Google API.
+    const credential = GoogleAuthProvider.credentialFromResult(result);
+    const token = credential?.accessToken;
+    // The signed-in user info.
+    const user = result.user;
+    console.log(user.displayName);
+    // ...
+  }).catch((error) => {
+    this.isAuthenticated = false;
+    // Handle Errors here.
+    const errorCode = error.code;
+    const errorMessage = error.message;
+    // The email of the user's account used.
+    const email = error.customData.email;
+    // The AuthCredential type that was used.
+    const credential = GoogleAuthProvider.credentialFromError(error);
+    // ...
+  });
+  }
+
+  facebookRegister() {
+
+    const auth = getAuth();
+signInWithPopup(auth, new FacebookAuthProvider())
+  .then((result) => {
+    // The signed-in user info.
+    const user = result.user;
+
+    // This gives you a Facebook Access Token. You can use it to access the Facebook API.
+    const credential = FacebookAuthProvider.credentialFromResult(result);
+    const accessToken = credential?.accessToken;
+
+    // ...
+  })
+  .catch((error) => {
+    // Handle Errors here.
+    const errorCode = error.code;
+    const errorMessage = error.message;
+    // The email of the user's account used.
+    const email = error.customData.email;
+    // The AuthCredential type that was used.
+    const credential = FacebookAuthProvider.credentialFromError(error);
+
+    // ...
+  });
+
+  }
 }

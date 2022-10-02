@@ -20,8 +20,23 @@ export class LoginComponent implements OnInit {
       email: ['', [Validators.required, Validators.pattern(this.emailRegx)]],
       password: ['', Validators.required]
     });
+
+    //console.log(localStorage.getItem('email'));
+    this.loginForm.get('email')?.setValue(localStorage.getItem('loginEmail'));
+    this.loginForm.get('password')?.setValue(localStorage.getItem('loginPassword'));
+
+    
+
   }
 
+  googleSignUp(){
+    
+    return this.authService.googleRegister();
+  }
+
+  facebookSignUp(){
+    return this.authService.facebookRegister();
+  }
   
   submit() {
       this.authService.logIn(this.loginForm);
@@ -34,5 +49,6 @@ export class LoginComponent implements OnInit {
   isAuthenticated(){
     return this.authService.isAuthenticated;
   }
+
 
 }

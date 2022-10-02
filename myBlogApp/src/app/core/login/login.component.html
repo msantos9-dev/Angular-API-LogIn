@@ -6,7 +6,7 @@
         <mat-form-field class="form-field" appearance="outline">
           <mat-label> E-mail
           </mat-label>
-          <input matInput formControlName="email" required>
+          <input matInput formControlName="email" required id="email" name="email">
           <mat-error *ngIf="loginForm.controls['email'].touched && loginForm.controls['email'].invalid">
             <span *ngIf="loginForm.controls['email'].errors?.['required']">This field is mandatory.</span>
             <span *ngIf="loginForm.controls['email'].errors?.['pattern']">This field is invalid.</span>
@@ -15,7 +15,7 @@
         <mat-form-field class="form-field" appearance="outline">
           <mat-label> Password
           </mat-label>
-          <input matInput formControlName="password" type="password">
+          <input matInput formControlName="password" type="password" id="password" name="password">
           <mat-error *ngIf="loginForm.controls['password'].touched && loginForm.controls['password'].invalid">
             <span *ngIf="loginForm.controls['password'].errors?.['required']">This field is mandatory.</span>
           </mat-error>
@@ -31,6 +31,16 @@
         </button>
         &nbsp;
         <button mat-raised-button color="secondary" routerLink="/register">Register</button>
+        &nbsp;
+        
       </form>
+      <br>
+      <button mat-raised-button color="warn" (click)="googleSignUp()">
+        <i class="fa-brands fa-google" style="color:yellow" aria-hidden="true">  </i> Google Sign-in
+      </button>
+      <br><br>
+      <button mat-raised-button color="primary" (click)="facebookSignUp()">
+        <i class="fa-brands fa-facebook" aria-hidden="true">  </i> Facebook Sign-in
+      </button>
     </div>
   </div>
