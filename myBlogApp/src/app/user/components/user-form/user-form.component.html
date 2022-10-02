@@ -1,0 +1,49 @@
+<div class="example-container">
+    <div class="form-container">
+      <form [formGroup]="userForm" (submit)="submit()">
+        <h1 class ="title">Add User</h1>
+        <mat-form-field class="form-field" appearance="outline">
+          <mat-label> E-mail
+          </mat-label>
+          <input matInput formControlName="email" required>
+          <mat-error *ngIf="userForm.controls['email'].touched && userForm.controls['email'].invalid">
+            <span *ngIf="userForm.controls['email'].errors?.['required']">This field is mandatory.</span>
+            <span *ngIf="userForm.controls['email'].errors?.['pattern']">This field is invalid.</span>
+          </mat-error>
+        </mat-form-field>
+  
+        <mat-form-field class="form-field" appearance="outline">
+          <mat-label> Name
+          </mat-label>
+          <input matInput formControlName="name" required>
+          <mat-error *ngIf="userForm.controls['name'].touched && userForm.controls['name'].invalid">
+            <span *ngIf="userForm.controls['name'].errors?.['required']">This field is mandatory.</span>
+          </mat-error>
+        </mat-form-field>
+  
+        <mat-form-field class="form-field" appearance="outline">
+          <mat-label>Type your bio</mat-label>
+          <textarea matInput placeholder="Ex. I am a b*****..." formControlName="bio" required></textarea>
+          <mat-error *ngIf="userForm.controls['bio'].touched && userForm.controls['bio'].invalid">
+            <span *ngIf="userForm.controls['bio'].errors?.['required']">This field is mandatory.</span>
+          </mat-error>
+        </mat-form-field>
+  
+        <mat-form-field class="form-field" appearance="outline">
+          <mat-label>Active</mat-label>
+          <mat-select formControlName="active" required>
+            <mat-option value="true">Yes</mat-option>
+            <mat-option value="false">No</mat-option>
+          </mat-select>
+          <mat-error *ngIf="userForm.controls['active'].touched && userForm.controls['active'].invalid">
+            <span *ngIf="userForm.controls['active'].errors?.['required']">This field is mandatory.</span>
+          </mat-error>
+        </mat-form-field>
+        
+   
+        <button mat-raised-button color="primary" type="submit">Submit</button>
+      </form>
+      <!--<div>{{ userForm.value | json }}</div>-->
+    </div>
+  </div>
+  

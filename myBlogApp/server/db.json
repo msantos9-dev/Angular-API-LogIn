@@ -1,0 +1,136 @@
+{
+  "blogs": [
+    {
+      "title": "'Say Yes'",
+      "description": "'Say Yes is an award-winning blog created by Liz Stanley in 2006. Although it could be classified as a mom blog as well, since Liz is a mother of three, it goes beyond that, offering useful advice about other topics, including food, and travel.'",
+      "author": "Liz Stanley",
+      "comments": [
+        "comment 1",
+        "comment 2",
+        "comment 3",
+        "comment 4"
+      ],
+      "id": 1
+    },
+    {
+      "id": 2,
+      "title": "'Apartment Therapy'",
+      "description": "'Apartment Therapy is a blog focusing on interior design. It was launched by Maxwell Ryan in 2001. Ryan is an interior designer who turned to blogging (using the moniker “the apartment therapist”). The blog has reached 20 million followers and has expanded into a full-scale media company.'",
+      "author": "Maxwell Ryan",
+      "comments": [
+        "comment 1",
+        "comment 2",
+        "comment 3",
+        "comment 4"
+      ]
+    },
+    {
+      "id": 3,
+      "title": "'Bright Bazaar'",
+      "description": "'Bright Bazaar was created by Will Taylor, a journalist-turned-interior designer in 2009. Apart from wonderful home tours and design findings, Will shares other exciting details about his lifestyle, including his outfits, recipes, and life in New York City.'",
+      "author": "Will Taylor",
+      "comments": [
+        "comment 1",
+        "comment 2",
+        "comment 3",
+        "comment 4"
+      ]
+    },
+    {
+      "id": 4,
+      "title": "'A Cup of Jo'",
+      "description": "'A weekend hobby for Joanna Goddard turned into a full-time job. She started A Cup of Jo in 2007 and became a superstar lifestyle blogger. In fact, the site is barely a personal blog anymore, as Jo now has a team of professional writers who share her interests, such as style, design, food, and motherhood.'",
+      "author": " Joanna Goddard",
+      "comments": [
+        "comment 1",
+        "comment 2",
+        "comment 3",
+        "comment 4"
+      ]
+    },
+    {
+      "id": 5,
+      "title": "'Smitten Kitchen'",
+      "description": "'Smitten Kitchen is an award-winning blog by Deb Perelman. The blog revolves around one place — Deb’s kitchen, where she experiments and comes up with unique recipes that she shares with the world. Her site has a nice feature called “Surprise me!” where a random recipe is suggested. Great for people wondering what to eat!'",
+      "author": "Deb Perelman",
+      "comments": [
+        "comment 1",
+        "comment 2",
+        "comment 3",
+        "comment 4"
+      ]
+    },
+    {
+      "title": "'Color me Courtney'",
+      "description": "'Courtney Quinn is a fashion and makeup blogger from NYC. She shares her colorful world in her blog called Color Me Courtney, where you can also find various makeup tutorials, lifestyle posts, and more.'",
+      "author": "Courtney Quinn",
+      "comments": "comment 1,comment 2,comment 3,comment 4",
+      "id": 6
+    }
+  ],
+  "books": [
+    {
+      "name": "'1000 Years of Joys and Sorrows'",
+      "authors": [
+        "Ai Weiwei"
+      ],
+      "isbn": "0553419463",
+      "image": "https://images-na.ssl-images-amazon.com/images/I/51ttp1m0o7L._SX327_BO1,204,203,200_.jpg",
+      "id": 1
+    },
+    {
+      "id": 3,
+      "name": "'A Certain Hunger'",
+      "authors": [
+        "Chelsea G. Summers"
+      ],
+      "isbn": "1951213432",
+      "image": "https://images-na.ssl-images-amazon.com/images/I/51uTDxhnRdS._SX322_BO1,204,203,200_.jpg"
+    },
+    {
+      "id": 4,
+      "name": "'The Latinist: A Novel'",
+      "authors": [
+        "Mark Prins"
+      ],
+      "isbn": "132403680X",
+      "image": "https://images-na.ssl-images-amazon.com/images/I/41blJc0JSCL._SY291_BO1,204,203,200_QL40_FMwebp_.jpg"
+    },
+    {
+      "id": 5,
+      "name": "'Imposter'",
+      "authors": [
+        "Bradeigh Godfrey"
+      ],
+      "isbn": "1665055189",
+      "image": "https://images-na.ssl-images-amazon.com/images/I/41B-Kx02w+L._SX311_BO1,204,203,200_.jpg"
+    },
+    {
+      "id": 6,
+      "name": "'Toxic Effects (Memory Thieves Series, Book 2)'",
+      "authors": [
+        "Joel Shulkin"
+      ],
+      "isbn": "1094022888",
+      "image": "https://images-na.ssl-images-amazon.com/images/I/41GrevUbxSL._SY291_BO1,204,203,200_QL40_FMwebp_.jpg"
+    },
+    {
+      "id": 7,
+      "name": "'Livid: A Scarpetta Novel (Kay Scarpetta, 26)'",
+      "authors": [
+        "Patricia Cornwell"
+      ],
+      "isbn": "1538725169",
+      "image": "https://images-na.ssl-images-amazon.com/images/I/51UCA3pQNcL._SX329_BO1,204,203,200_.jpg"
+    },
+    {
+      "id": 8,
+      "name": "'The Assassin's Betrayal: CIA Assassin'",
+      "authors": [
+        "Auston King"
+      ],
+      "isbn": "979-8555486158",
+      "image": "https://images-na.ssl-images-amazon.com/images/I/41CD4dlZN-L._SX331_BO1,204,203,200_.jpg"
+    }
+  ]
+}

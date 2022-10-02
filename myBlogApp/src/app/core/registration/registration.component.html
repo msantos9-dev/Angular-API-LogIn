@@ -1,0 +1,42 @@
+<div class="example-container">
+    <div class="form-container">
+      <mat-label class="registerLabel"> Register</mat-label>
+
+      <form [formGroup]="registrationForm" (submit)="submit()">
+        <mat-form-field class="form-field" appearance="outline">
+          <mat-label> E-mail
+          </mat-label>
+          <input matInput formControlName="email" required>
+          <mat-error *ngIf="registrationForm.controls['email'].touched && registrationForm.controls['email'].invalid">
+            <span *ngIf="registrationForm.controls['email'].errors?.['required']">This field is mandatory.</span>
+            <span *ngIf="registrationForm.controls['email'].errors?.['pattern']">This field is invalid.</span>
+          </mat-error>
+        </mat-form-field>
+
+        <mat-form-field class="form-field" appearance="outline">
+          <mat-label> Password
+          </mat-label>
+          <input matInput formControlName="password" type="password">
+          <mat-error *ngIf="registrationForm.controls['password'].touched && registrationForm.controls['password'].invalid">
+            <span *ngIf="registrationForm.controls['password'].errors?.['required']">This field is mandatory.</span>
+          </mat-error>
+        </mat-form-field>
+
+        <mat-form-field class="form-field" appearance="outline">
+            <mat-label> Confirm Password
+            </mat-label>
+            <input matInput formControlName="confirmPassword" type="password">
+            <mat-error *ngIf="registrationForm.controls['confirmPassword'].touched && registrationForm.controls['confirmPassword'].invalid">
+              <span *ngIf="registrationForm.controls['confirmPassword'].errors?.['required']">This field is mandatory.</span>
+            </mat-error>
+          </mat-form-field>
+
+        <button mat-raised-button color="primary" type="submit">
+          <ng-container *ngIf="isLoading()">Loading...</ng-container>
+          <ng-container *ngIf="!isLoading()">Register</ng-container>
+        </button>
+        &nbsp;
+        <button mat-raised-button color="secondary" routerLink="/login">Back to Log-in</button>
+      </form>
+    </div>
+  </div>

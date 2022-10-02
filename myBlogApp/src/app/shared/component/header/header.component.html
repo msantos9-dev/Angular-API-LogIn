@@ -1,0 +1,19 @@
+
+<nav  class="navbar navbar-dark bg-danger navbar-expand-sm">
+    <div class="container">
+        <a *ngIf="isAuthenticated()" class="navbar-brand" routerLink="/blog/admin">
+            <i class="fa fa-th bg-normal" aria-hidden="true">  My Blog App</i>
+        </a>
+        <form class="form-inline">
+            <a *ngIf="isAuthenticated()" class="navbar-brand" routerLink="/book/admin">
+                <i class="fa fa-book bg-normal" aria-hidden="true">  Books</i>
+            </a>
+            <a *ngIf="isAuthenticated()" class="navbar-brand" routerLink="/user/admin">
+                <i class="fa fa-user bg-normal" aria-hidden="true">  Profile</i>
+            </a>
+            <a *ngIf="isAuthenticated()" class="navbar-brand" (click)="logOut()">
+                <i class="fa fa-user bg-normal" aria-hidden="true">  Log-Out</i>
+            </a>
+        </form>
+    </div>
+</nav>

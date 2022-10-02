@@ -1,0 +1,25 @@
+<app-command-bar (cbEmitter) ="commandBarAction($event)"></app-command-bar>
+
+<!--loading spinner-->
+<app-spinner *ngIf="loading"></app-spinner>
+
+
+<!--error message-->
+<div>
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <p class="h4 text-danger fw-bold"> {{errorMessage}}</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--books-->
+<div  *ngIf="!loading && books.length>0" class="container mt-3">
+    <div class="row">
+        <div *ngFor = "let book of books" class="col-md-6 mb-2">       
+           <app-book-item (bookDeleteEmitter)="deleteBook($event)" [book] = "book"></app-book-item>
+        </div>
+    </div>
+</div>

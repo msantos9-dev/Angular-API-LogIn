@@ -1,0 +1,23 @@
+<div class="card list-group-item p-1">
+    <div class="p-0 card-body">
+        <div class="col ">                   
+                <h2 class="d-flex justify-content-center fw-bold">{{ blog?.title}}</h2> 
+        </div>
+    </div>
+</div>
+<div class="card list-group-item-normal shadow-lg">
+    <div class="card-body">
+        <div class="col">      
+                <p class="d-flex justify-content-center">{{ blog?.description}}</p>                 
+                <p class="d-flex justify-content-center">by: {{ blog?.author}}</p>  
+        </div>
+        <div class="d-flex justify-content-center">
+            <div class="btn-group" role="group" aria-label="Basic example">
+                <a class="btn btn-secondary" routerLink="/blog/edit/{{blog?.id}}">
+                    <i class ="fa fa-pencil-square" ></i> Edit</a>
+                <a class="btn btn-danger" (click)="deleteBlog(blog?.id)">
+                    <i class ="fa fa-minus-square"></i> Delete</a >
+            </div>
+        </div>
+    </div>
+</div>

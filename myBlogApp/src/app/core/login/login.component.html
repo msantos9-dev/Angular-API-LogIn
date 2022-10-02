@@ -1,0 +1,36 @@
+<div class="example-container">
+    <div class="form-container">
+      <mat-label class="logInLabel"> Log-in</mat-label>
+
+      <form [formGroup]="loginForm" (submit)="submit()">
+        <mat-form-field class="form-field" appearance="outline">
+          <mat-label> E-mail
+          </mat-label>
+          <input matInput formControlName="email" required>
+          <mat-error *ngIf="loginForm.controls['email'].touched && loginForm.controls['email'].invalid">
+            <span *ngIf="loginForm.controls['email'].errors?.['required']">This field is mandatory.</span>
+            <span *ngIf="loginForm.controls['email'].errors?.['pattern']">This field is invalid.</span>
+          </mat-error>
+        </mat-form-field>
+        <mat-form-field class="form-field" appearance="outline">
+          <mat-label> Password
+          </mat-label>
+          <input matInput formControlName="password" type="password">
+          <mat-error *ngIf="loginForm.controls['password'].touched && loginForm.controls['password'].invalid">
+            <span *ngIf="loginForm.controls['password'].errors?.['required']">This field is mandatory.</span>
+          </mat-error>
+        </mat-form-field>
+        <ng-container *ngIf="!isAuthenticated() && loginForm.controls['password'].touched && loginForm.controls['email'].touched" >
+          <mat-label class="userNotFound">Username or Password incorrect.</mat-label>
+          <br><br>
+        </ng-container>
+
+        <button mat-raised-button color="primary" type="submit">
+          <ng-container *ngIf="isLoading()">Loading...</ng-container>
+          <ng-container *ngIf="!isLoading()">Log-in</ng-container>
+        </button>
+        &nbsp;
+        <button mat-raised-button color="secondary" routerLink="/register">Register</button>
+      </form>
+    </div>
+  </div>

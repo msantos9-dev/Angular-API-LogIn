@@ -1,0 +1,63 @@
+<!--loading spinner-->
+<app-spinner *ngIf="loading"></app-spinner>
+
+
+<!--error message-->
+<div>
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <p class="h4 text-danger fw-bold"> {{errorMessage}}</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="example-container">
+  <div class="form-container">
+    <form [formGroup]="bookForm" (submit)="submit()">
+      <h1 *ngIf="hasRoute('add')" class ="title">Add Book</h1>
+      <h1 *ngIf="hasRoute('edit')" class ="title">Edit Book</h1>
+
+      <mat-form-field class="form-field" appearance="outline">
+        <mat-label> Book Title </mat-label>
+        <input matInput formControlName="name" name="name" id ="name" required>
+        <mat-error *ngIf="bookForm.controls['name'].touched && bookForm.controls['name'].invalid">
+          <span *ngIf="bookForm.controls['name'].errors?.['required']">This field is mandatory.</span>
+        </mat-error>
+      </mat-form-field>
+
+      <mat-form-field class="form-field" appearance="outline">
+        <mat-label> Authors </mat-label>
+        <input matInput formControlName="authors" name="authors" id ="authors" required >
+        <mat-error *ngIf="bookForm.controls['authors'].touched && bookForm.controls['authors'].invalid">
+          <span *ngIf="bookForm.controls['authors'].errors?.['required']">This field is mandatory.</span>
+        </mat-error>
+      </mat-form-field>
+
+      <mat-form-field class="form-field" appearance="outline">
+        <mat-label> ISBN </mat-label>
+        <input matInput formControlName="isbn" name="isbn" id ="isbn" required >
+        <mat-error *ngIf="bookForm.controls['isbn'].touched && bookForm.controls['isbn'].invalid">
+          <span *ngIf="bookForm.controls['isbn'].errors?.['required']">This field is mandatory.</span>
+        </mat-error>
+      </mat-form-field>
+
+      <mat-form-field class="form-field" appearance="outline">
+        <mat-label> Image Link </mat-label>
+        <input matInput formControlName="image" name="image" id ="image" required >
+        <mat-error *ngIf="bookForm.controls['image'].touched && bookForm.controls['image'].invalid">
+          <span *ngIf="bookForm.controls['image'].errors?.['required']">This field is mandatory.</span>
+        </mat-error>
+      </mat-form-field>
+
+      
+      <button mat-raised-button color="primary" type="submit">Submit</button>
+    </form>
+    <!-- <div>{{ bookForm.value | json }}</div>-->
+    <div>{{ bookForm.value | json }}</div>
+  </div>
+</div>
+
+<!--<pre>{{blog | json}}</pre> -->
+<pre>{{book | json}}</pre>
